@@ -25,7 +25,6 @@ Install-Module SarakeSignPS
 
 ### Create connection to Sarake Sign
 
-To setup site with only wilma fuctionality use
 ```powershell
 # Create credential for connection
 # Format site url wirh api suffix like "https://sign.somedomain.net/api"
