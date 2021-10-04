@@ -1,8 +1,11 @@
 function Invoke-SignApi {
     [CmdletBinding()]
     param (
+        #api path
         $api,
-        $body,
+        #request body
+        [hashtable]
+        $body = @{},
         $method='GET'
     )
 
