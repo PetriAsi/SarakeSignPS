@@ -28,6 +28,7 @@ function Add-SignDocument {
         $id,
         # Document to attach
         [Parameter(Mandatory=$true)]
+        [ValidateScript({Test-Path $_ -PathType Leaf})]
         [string]
         $file,
         # Document metadata
