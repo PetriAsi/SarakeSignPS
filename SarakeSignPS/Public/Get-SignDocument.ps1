@@ -70,7 +70,7 @@ function Get-SignDocument {
                 $fullfilename = Join-Path -Path $Path -ChildPath $doc.title
                 Write-Verbose "Downloading file id:  $($doc.id) , title : $($doc.title) to path : $fullfilename"
 
-                Invoke-SignApi -api "/document/$($doc.id)/download" -method GET | Out-File -FilePath $fullfilename
+                Invoke-SignApi -api "/document/$($doc.id)/download" -method GET -OutFile $fullfilename
 
             }
         } else {
