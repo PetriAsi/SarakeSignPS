@@ -8,7 +8,10 @@ function Invoke-SignApi {
         [System.Collections.Hashtable]
         $body = @{},
         [string]
-        $method='GET'
+        $method='GET',
+        #save to file
+        [string]
+        $OutFile
     )
 
     begin {
@@ -26,13 +29,24 @@ function Invoke-SignApi {
     }
 
     process {
-        if ($null -eq $body['file']) {
-            Invoke-RestMethod -Uri $apiuri -Method $method -Body $body -Headers $header
-        } else {
-            write-debug "Body: $body"
-            Invoke-RestMethod -Uri $apiuri -Method $method -Form $body -Headers $header
-
+        $params = @{
+            "Uri"       = $apiuri
+            "Method"    = $method
+            "Headers"   = $header
         }
+
+        if ($null -eq $body['file']) {
+            $params["Body"]      = $body
+        } else {
+            $params["Form"]      = $body
+        }
+
+        if ($OutFile) {
+            $params['OutFile'] = $OutFile
+        }
+
+        Invoke-RestMethod @params
+
     }
 
     end {
