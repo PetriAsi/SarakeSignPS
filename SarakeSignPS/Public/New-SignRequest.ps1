@@ -1,6 +1,13 @@
 <#
 .SYNOPSIS
 Creates new sign request
+
+.EXAMPLE
+New-SignRequest -process '0d00000000000001'
+
+Creates new signing request with specific process id. To get process ids
+use Get-SignProcess command.
+
 #>
 function New-SignRequest {
     [CmdletBinding(SupportsShouldProcess)]
