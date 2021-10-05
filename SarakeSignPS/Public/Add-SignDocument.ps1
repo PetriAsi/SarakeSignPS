@@ -8,6 +8,15 @@ Uploads and attach document to signing request.
 .EXAMPLE
 Add-SignDocument -id '130000000000001d' -file  some.pdf -data (New-SignDocumentMetadata)
 
+Adds a document to signing request
+
+.EXAMPLE
+Add-SignDocument -id '130000000000001d' -file  some.pdf -data (New-SignDocumentMetadata -signatureMode NotSigned)
+
+Adds a document as attachment to signing request. Attachments are not signed.
+
+
+
 #>
 
 function Add-SignDocument {
@@ -19,6 +28,7 @@ function Add-SignDocument {
         $id,
         # Document to attach
         [Parameter(Mandatory=$true)]
+        [ValidateScript({Test-Path $_ -PathType Leaf})]
         [string]
         $file,
         # Document metadata

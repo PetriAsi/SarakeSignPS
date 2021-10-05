@@ -1,8 +1,13 @@
 function Invoke-SignApi {
     [CmdletBinding()]
     param (
+        #api path
+        [string]
         $api,
-        $body,
+        #request body
+        [System.Collections.Hashtable]
+        $body = @{},
+        [string]
         $method='GET'
     )
 
@@ -13,7 +18,8 @@ function Invoke-SignApi {
             "Accept" = "application/json"
         }
         if ($method -ne 'GET' -and $null -eq $body['file'] ) {
-            $body = $body | ConvertTo-Json -Depth 7
+            [string]$body = [System.Collections.Hashtable]$body | ConvertTo-Json -Depth 7
+            write-debug "Body: $body"
             $header['Content-Type'] = 'application/json'
         }
 
@@ -23,6 +29,7 @@ function Invoke-SignApi {
         if ($null -eq $body['file']) {
             Invoke-RestMethod -Uri $apiuri -Method $method -Body $body -Headers $header
         } else {
+            write-debug "Body: $body"
             Invoke-RestMethod -Uri $apiuri -Method $method -Form $body -Headers $header
 
         }
