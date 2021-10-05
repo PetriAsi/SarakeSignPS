@@ -19,6 +19,7 @@ function Invoke-SignApi {
         }
         if ($method -ne 'GET' -and $null -eq $body['file'] ) {
             [string]$body = [System.Collections.Hashtable]$body | ConvertTo-Json -Depth 7
+            write-debug "Body: $body"
             $header['Content-Type'] = 'application/json'
         }
 
@@ -28,6 +29,7 @@ function Invoke-SignApi {
         if ($null -eq $body['file']) {
             Invoke-RestMethod -Uri $apiuri -Method $method -Body $body -Headers $header
         } else {
+            write-debug "Body: $body"
             Invoke-RestMethod -Uri $apiuri -Method $method -Form $body -Headers $header
 
         }
