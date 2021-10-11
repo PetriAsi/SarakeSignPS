@@ -79,14 +79,15 @@ function Add-SignRequestRecipient {
 
         $api = "/request/"+$id+"/add"
         $body  = . Get-ParameterValue -Parameters $MyInvocation.MyCommand.Parameters -BoundParameters $PSBoundParameters -DefaultExcludeParameter 'id','debug','verbose','firstName','lastName','title','organizationName','languageCode','phoneNumber'
-        if($null -eq $body['readonly']) {
-            $body['readonly'] = $false
-        }
 
         if($null -eq $body['readonly']) {
             $body['readonly'] = $false
         }
+
+        $body['phaseNumber'] = $phaseNumber
+
         $fields = . Get-ParameterValue -Parameters $MyInvocation.MyCommand.Parameters -BoundParameters $PSBoundParameters -DefaultExcludeParameter 'id','phaseNumber','readonly','recipient','debug','verbose'
+
         if ($fields.Count -gt 1) {
             $body['fields'] = $fields
         }
