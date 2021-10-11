@@ -71,6 +71,7 @@ PowerShellVersion = '7.1'
 # Functions to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no functions to export.
 FunctionsToExport = @(
    'Connect-SarakeSignPS',
+   'ConvertTo-NameValues',
    'Add-SignDocument',
    'Add-SignRequestRecipient',
    'Get-SignDocument',
@@ -82,6 +83,7 @@ FunctionsToExport = @(
    'New-SignRequest',
    'Send-SignRequest',
    'Set-SignRequest'
+
 )
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
