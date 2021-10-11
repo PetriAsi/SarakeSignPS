@@ -28,7 +28,11 @@ function Set-SignRequest {
         # combineDocuments
         [Parameter(Mandatory=$false)]
         [bool]
-        $combineDocuments
+        $combineDocuments,
+        # custom attributes for signing request
+        [Parameter(Mandatory=$false)]
+        [hashtable]
+        $attributes
 
     )
 
@@ -36,7 +40,9 @@ function Set-SignRequest {
         $api = "/request/$id"
         $Body = . Get-ParameterValue -Parameters $MyInvocation.MyCommand.Parameters -BoundParameters $PSBoundParameters
         Write-Verbose "Set-SignRequest body: $($Body | Convertto-json)"
-
+        if ($Body['attributes']) {
+            $Body['attributes'] = ConvertTo-NameValues -hashtable $Body['attributes']
+        }
     }
 
     process {
