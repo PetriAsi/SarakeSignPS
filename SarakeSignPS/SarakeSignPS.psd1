@@ -70,23 +70,22 @@ PowerShellVersion = '7.1'
 
 # Functions to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no functions to export.
 FunctionsToExport = @(
-
-   'Abort-SignRequest'
-   'Add-SignDocument',
-   'Add-SignRequestRecipient',
-   'Connect-SarakeSignPS',
-   'ConvertTo-NameValues',
-   'Get-SignDocument',
-   'Get-SignProcess',
-   'Get-SignReqTemplate',
-   'Get-SignRequest',
-   'Get-SignUser',
-   'New-SignDocumentMetadata',
-   'New-SignRequest',
-   'Send-SignRequest',
-   'Set-SignRequest',
-   'Remove-SignRequest',
-   'Reset-SignRequest'
+    'Add-SignDocument',
+    'Add-SignRequestRecipient',
+    'Connect-SarakeSignPS',
+    'ConvertTo-NameValues',
+    'Get-SignDocument',
+    'Get-SignProcess',
+    'Get-SignReqTemplate',
+    'Get-SignRequest',
+    'Get-SignUser',
+    'New-SignDocumentMetadata',
+    'New-SignRequest',
+    'Start-SignRequest',
+    'Stop-SignRequest'
+    'Set-SignRequest',
+    'Remove-SignRequest',
+    'Reset-SignRequest'
 
 )
 

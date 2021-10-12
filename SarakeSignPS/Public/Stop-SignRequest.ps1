@@ -2,12 +2,12 @@
 .SYNOPSIS
 This operation resets the signing request back to Draft status
 #>
-function Abort-SignRequest {
+function Stop-SignRequest {
     [CmdletBinding(SupportsShouldProcess)]
     param (
         # Request id
         [Parameter(Mandatory=$true,ValueFromPipelineByPropertyName)]
-        [string]
+        [string[]]
         $id,
         # Reason for abort
         [Parameter(Mandatory=$true)]
