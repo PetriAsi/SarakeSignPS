@@ -2,7 +2,7 @@
 .SYNOPSIS
 Sends requests to signers
 #>
-function Send-SignRequest {
+function Start-SignRequest {
     [CmdletBinding(SupportsShouldProcess)]
     param (
         # Request id
