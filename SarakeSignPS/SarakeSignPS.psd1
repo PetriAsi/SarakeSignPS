@@ -82,7 +82,8 @@ FunctionsToExport = @(
    'New-SignDocumentMetadata',
    'New-SignRequest',
    'Send-SignRequest',
-   'Set-SignRequest'
+   'Set-SignRequest',
+   'Remove-SignRequest'
 
 )
 
