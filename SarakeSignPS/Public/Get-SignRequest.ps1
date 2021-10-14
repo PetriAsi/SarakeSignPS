@@ -33,12 +33,12 @@ function Get-SignRequest {
         $api = "/request"
         if ($id) { $api = $api +"/$id"}
 
-        $mode = @{'All requests' = 0; 'Received by the current user' = 1;'Sent by the current user' =2}[$mode]
-        $body = @{ 'mode' = $mode }
+        $newmode = @{'All requests' = 0; 'Received by the current user' = 1;'Sent by the current user' = 2}[$mode]
+        $body = @{ 'mode' = $newmode }
 
         if ($showAll) { $body.showAll = $true}
         if ( $null -ne $status) {
-            $body.status = @{'Draft' = 0; 'Waiting for the current user' = 1; 'Waiting for other users' = 2; 'Completed requests' = 3; 'Aborted requests' = 4}[$status]
+            $body['status'] = @{'Draft' = 0; 'Waiting for the current user' = 1; 'Waiting for other users' = 2; 'Completed requests' = 3; 'Aborted requests' = 4}[$status]
         }
     }
 
