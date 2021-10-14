@@ -81,11 +81,13 @@ function Set-SignRequest {
         }
 
         if($validProofTypes){
-            $body['validProofTypes'] = @{'NONE' = 0;'BASIC'=1 ;'STRONG' = 2;'ADVANCED' = 3;'AUTOGEN'= 4}[$validProofTypes]
+            for ($j = 0; $j -lt ([array]$validProofTypes).Count ; $j++){
+                $body['validProofTypes'][$j] = @{'NONE' = 0;'BASIC'=1 ;'STRONG' = 2;'ADVANCED' = 3;'AUTOGEN'= 4}[([array]$validProofTypes)[$j]]
+            }
         }
 
         if($dueDate) {
-            $body['dueDate'] = [string](get-date $body['dueDate'] -Format "yyyy-MM-ddThh:mm:ss.fffffffK")
+            $body['dueDate'] = [string](get-date $body['dueDate'] -Uformat "%Y-%m-%dT%H:%M:%S.000Z")
         }
     }
 
