@@ -20,6 +20,9 @@ Adds recipient to signing request
 ### [Connect-SarakeSignPS](Connect-SarakeSignPS.md)
 {{ Fill in the Synopsis }}
 
+### [ConvertTo-NameValues](ConvertTo-NameValues.md)
+Cnvert hashtable to array of hashtables nad name value pairs
+
 ### [Get-SignDocument](Get-SignDocument.md)
 Gets document information or downloads document
 
@@ -41,9 +44,18 @@ Gets document metadata object
 ### [New-SignRequest](New-SignRequest.md)
 Creates new sign request
 
-### [Send-SignRequest](Send-SignRequest.md)
-Sends requests to signers
+### [Remove-SignRequest](Remove-SignRequest.md)
+Removes sign request
+
+### [Reset-SignRequest](Reset-SignRequest.md)
+This operation resets the signing request back to Draft status
 
 ### [Set-SignRequest](Set-SignRequest.md)
 Sets request properties
+
+### [Start-SignRequest](Start-SignRequest.md)
+Sends requests to signers
+
+### [Stop-SignRequest](Stop-SignRequest.md)
+This operation resets the signing request back to Draft status
 

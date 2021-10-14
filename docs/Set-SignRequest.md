@@ -14,7 +14,8 @@ Sets request properties
 
 ```
 Set-SignRequest [-id] <String> [[-title] <String>] [[-description] <String>] [[-autoArchive] <Boolean>]
- [[-sendMail] <Boolean>] [[-combineDocuments] <Boolean>] [-WhatIf] [-Confirm] [<CommonParameters>]
+ [[-sendMail] <Boolean>] [[-combineDocuments] <Boolean>] [[-validProofTypes] <String[]>]
+ [[-proofScope] <Object>] [[-attributes] <Hashtable>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -30,6 +31,21 @@ PS C:\> {{ Add example code here }}
 {{ Add example description here }}
 
 ## PARAMETERS
+
+### -attributes
+custom attributes for signing request
+
+```yaml
+Type: Hashtable
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 9
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -autoArchive
 autoAchive
@@ -91,6 +107,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -proofScope
+Proofing scope
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 8
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -sendMail
 sendMail
 
@@ -116,6 +147,21 @@ Aliases:
 
 Required: False
 Position: 2
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -validProofTypes
+Valid user proofing methods
+
+```yaml
+Type: String[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 7
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

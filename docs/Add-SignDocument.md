@@ -26,6 +26,16 @@ Uploads and attach document to signing request.
 Add-SignDocument -id '130000000000001d' -file  some.pdf -data (New-SignDocumentMetadata)
 ```
 
+Adds a document to signing request
+
+### EXAMPLE 2
+```
+Add-SignDocument -id '130000000000001d' -file  some.pdf -data (New-SignDocumentMetadata -signatureMode NotSigned)
+```
+
+Adds a document as attachment to signing request.
+Attachments are not signed.
+
 ## PARAMETERS
 
 ### -data

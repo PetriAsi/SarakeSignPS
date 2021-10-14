@@ -19,12 +19,17 @@ Get-SignDocument [-keywords <String>] [<CommonParameters>]
 
 ### Download
 ```
-Get-SignDocument -id <String> [-download] [-Path <String>] [-Filename <String>] [<CommonParameters>]
+Get-SignDocument -id <String> [-download] [-Path <String>] [<CommonParameters>]
 ```
 
 ### Get by id
 ```
 Get-SignDocument -id <String> [<CommonParameters>]
+```
+
+### Get by request
+```
+Get-SignDocument -request <String> [-download] [-Path <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -42,7 +47,7 @@ PS C:\> {{ Add example code here }}
 ## PARAMETERS
 
 ### -download
-download document
+download document by id or all documents from request
 
 ```yaml
 Type: SwitchParameter
@@ -56,17 +61,14 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Filename
-Filename for document, use orginal if empty
-
 ```yaml
-Type: String
-Parameter Sets: Download
+Type: SwitchParameter
+Parameter Sets: Get by request
 Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -102,16 +104,31 @@ Accept wildcard characters: False
 ```
 
 ### -Path
-Path to save documet to
+Path to save document(s) to
 
 ```yaml
 Type: String
-Parameter Sets: Download
+Parameter Sets: Download, Get by request
 Aliases:
 
 Required: False
 Position: Named
 Default value: .
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -request
+id of request
+
+```yaml
+Type: String
+Parameter Sets: Get by request
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
