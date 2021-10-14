@@ -25,6 +25,21 @@ function Set-SignRequest {
         [bool]
         $autoArchive,
 
+        #Message for the archivist
+        [Parameter(Mandatory=$false)]
+        [string]
+        $archiveDescription,
+
+        #Request due date
+        [Parameter(Mandatory=$false)]
+        [datetime]
+        $dueDate,
+
+        #Ending notification period in days. How may days before due date an automatic reminder is sent to the user. Zero means "no notification will be sent"
+        [Parameter(Mandatory=$false)]
+        [Int32]
+        $notificationDays,
+
         # sendMail
         [Parameter(Mandatory=$false)]
         [bool]
@@ -67,6 +82,10 @@ function Set-SignRequest {
 
         if($validProofTypes){
             $body['validProofTypes'] = @{'NONE' = 0;'BASIC'=1 ;'STRONG' = 2;'ADVANCED' = 3;'AUTOGEN'= 4}[$validProofTypes]
+        }
+
+        if($dueDate) {
+            $body['dueDate'] = [string](get-date $body['dueDate'] -Format "yyyy-MM-ddThh:mm:ss.fffffffK")
         }
     }
 
