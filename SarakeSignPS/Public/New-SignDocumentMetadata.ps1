@@ -51,9 +51,9 @@ function New-SignDocumentMetadata {
     begin {
         $Body = . Get-ParameterValue -Parameters $MyInvocation.MyCommand.Parameters -BoundParameters $PSBoundParameters
 
-        $signatureModes=@{'NotSigned' = 0
-                          'SignaturePage' = 1
-                          'SignatureFields' = 2}
+        $signatureModes=@{'NotSigned' = 1
+                          'SignaturePage' = 2
+                          'SignatureFields' = 3}
 
         $Body['signatureMode'] = $signatureModes[$signatureMode]
 
