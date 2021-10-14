@@ -41,20 +41,29 @@ Connect-SarakeSignPS -siteCred (Import-Clixml sitecred.xml)
 ```
 
 ### Create Signing request
+```powershell
 $req = New-SignRequest -process '0d00000000000001'
+```
 
 ### Set request properties
-
+```powershell
 Set-SignRequest -id $req.id -title 'Testing 123' -description 'Testing from SarakeSignPS' -sendMail $true -combineDocuments $true  -validProofTypes ADVANCED -proofScope 'Invitees only'
+```
 
 ### Add recipient
+```powershell
 Add-SignRequestRecipient -id $req.id -phaseNumber 0 -recipient somecompanyuser@company.domain.com
 
 Add-SignRequestRecipient -id $req.id -phaseNumber 0 -recipient someexternaluser@externaldomain.com -firstName Some -lastName User -title 'Test user' -organizationName ExternalOrg
+```
 
 ### Add documents to request
+```powershell
 Add-SignDocument -id $req.id -file some_document.pdf -data (New-SignDocumentMetadata) -title "Contract"
 Add-SignDocument -id $req.id -file some_other_document.docx -data (New-SignDocumentMetadata) -title "Some word document"
+```
 
 ### Start signing request
+```powershell
 Start-SignRequest $req.id
+```
