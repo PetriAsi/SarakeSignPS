@@ -5,7 +5,7 @@ online version:
 schema: 2.0.0
 ---
 
-# Send-SignRequest
+# Start-SignRequest
 
 ## SYNOPSIS
 Sends requests to signers
@@ -13,7 +13,7 @@ Sends requests to signers
 ## SYNTAX
 
 ```
-Send-SignRequest [-id] <String> [-WhatIf] [-Confirm] [<CommonParameters>]
+Start-SignRequest [-id] <String> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION

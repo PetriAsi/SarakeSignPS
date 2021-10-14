@@ -5,15 +5,15 @@ online version:
 schema: 2.0.0
 ---
 
-# New-SignRequest
+# Stop-SignRequest
 
 ## SYNOPSIS
-Creates new sign request
+This operation resets the signing request back to Draft status
 
 ## SYNTAX
 
 ```
-New-SignRequest [-process] <String> [-WhatIf] [-Confirm] [<CommonParameters>]
+Stop-SignRequest [-id] <String[]> [-reason] <String> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -21,19 +21,32 @@ New-SignRequest [-process] <String> [-WhatIf] [-Confirm] [<CommonParameters>]
 
 ## EXAMPLES
 
-### EXAMPLE 1
-```
-New-SignRequest -process '0d00000000000001'
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
 ```
 
-Creates new signing request with specific process id.
-To get process ids
-use Get-SignProcess command.
+{{ Add example description here }}
 
 ## PARAMETERS
 
-### -process
-Process id
+### -id
+Request id
+
+```yaml
+Type: String[]
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -reason
+Reason for abort
 
 ```yaml
 Type: String
@@ -41,7 +54,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: True
-Position: 1
+Position: 2
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

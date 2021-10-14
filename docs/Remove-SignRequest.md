@@ -5,15 +5,15 @@ online version:
 schema: 2.0.0
 ---
 
-# New-SignRequest
+# Remove-SignRequest
 
 ## SYNOPSIS
-Creates new sign request
+Removes sign request
 
 ## SYNTAX
 
 ```
-New-SignRequest [-process] <String> [-WhatIf] [-Confirm] [<CommonParameters>]
+Remove-SignRequest [-id] <String> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -21,19 +21,17 @@ New-SignRequest [-process] <String> [-WhatIf] [-Confirm] [<CommonParameters>]
 
 ## EXAMPLES
 
-### EXAMPLE 1
-```
-New-SignRequest -process '0d00000000000001'
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
 ```
 
-Creates new signing request with specific process id.
-To get process ids
-use Get-SignProcess command.
+{{ Add example description here }}
 
 ## PARAMETERS
 
-### -process
-Process id
+### -id
+Request id
 
 ```yaml
 Type: String
@@ -43,7 +41,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
