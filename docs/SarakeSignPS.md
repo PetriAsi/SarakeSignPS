@@ -35,6 +35,9 @@ Gets requestemplate
 ### [Get-SignRequest](Get-SignRequest.md)
 Get signing request
 
+### [Get-SignRequestRecipient](Get-SignRequestRecipient.md)
+{{ Fill in the Synopsis }}
+
 ### [Get-SignUser](Get-SignUser.md)
 Gets sing users and contacts
 
@@ -46,6 +49,9 @@ Creates new sign request
 
 ### [Remove-SignRequest](Remove-SignRequest.md)
 Removes sign request
+
+### [Remove-SignRequestRecipient](Remove-SignRequestRecipient.md)
+{{ Fill in the Synopsis }}
 
 ### [Reset-SignRequest](Reset-SignRequest.md)
 This operation resets the signing request back to Draft status

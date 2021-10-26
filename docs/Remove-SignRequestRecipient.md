@@ -5,15 +5,16 @@ online version:
 schema: 2.0.0
 ---
 
-# Get-SignRequest
+# Remove-SignRequestRecipient
 
 ## SYNOPSIS
-Get signing request
+{{ Fill in the Synopsis }}
 
 ## SYNTAX
 
 ```
-Get-SignRequest [[-id] <String>] [[-mode] <String>] [[-status] <String>] [-showAll] [<CommonParameters>]
+Remove-SignRequestRecipient [-id] <String> [-recipient_id] <String> [[-phaseNumber] <Int32>] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -31,60 +32,76 @@ PS C:\> {{ Add example code here }}
 ## PARAMETERS
 
 ### -id
-Request id
+{{ Fill id Description }}
 
 ```yaml
 Type: String
 Parameter Sets: (All)
 Aliases:
 
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -phaseNumber
+{{ Fill phaseNumber Description }}
+
+```yaml
+Type: Int32
+Parameter Sets: (All)
+Aliases:
+
 Required: False
+Position: 2
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -recipient_id
+{{ Fill recipient_id Description }}
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
 Position: 1
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -mode
-All requests , Received by the current user or Sent by the current user
-
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: 2
-Default value: All requests
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -showAll
-Indicates whether requests from all users should be shown
+### -Confirm
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases:
+Aliases: cf
 
 Required: False
 Position: Named
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -status
-0 = Draft,1 = Waiting for the current user,2 = Waiting for other users,3 = Completed requests, 4 = Aborted requests
+### -WhatIf
+Shows what would happen if the cmdlet runs.
+The cmdlet is not run.
 
 ```yaml
-Type: String
+Type: SwitchParameter
 Parameter Sets: (All)
-Aliases:
+Aliases: wi
 
 Required: False
-Position: 3
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -95,8 +112,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
+### System.String
+
 ## OUTPUTS
 
+### System.Object
 ## NOTES
 
 ## RELATED LINKS
