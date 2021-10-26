@@ -27,6 +27,6 @@ function ConvertTo-NameValues {
     }
 
     end {
-        $output
+        [array]$output
     }
 }

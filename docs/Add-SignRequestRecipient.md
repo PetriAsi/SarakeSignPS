@@ -15,7 +15,7 @@ Adds recipient to signing request
 ```
 Add-SignRequestRecipient [-id] <String> [[-phaseNumber] <Int32>] [-recipient] <String> [[-readonly] <Boolean>]
  [[-firstName] <String>] [[-lastName] <String>] [[-title] <String>] [[-organizationName] <String>]
- [[-languageCode] <String>] [[-phoneNumber] <String>] [<CommonParameters>]
+ [[-languageCode] <String>] [[-phoneNumber] <String>] [[-attributes] <Hashtable>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -36,6 +36,21 @@ Add-SignRequestRecipient  -id '130000000000001d' -recipient someonenew@somedomai
 ```
 
 ## PARAMETERS
+
+### -attributes
+custom attributes for recipient(not supported yet by api)
+
+```yaml
+Type: Hashtable
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 11
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -firstName
 First name

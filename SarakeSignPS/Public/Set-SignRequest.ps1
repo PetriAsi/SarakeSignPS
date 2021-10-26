@@ -73,7 +73,7 @@ function Set-SignRequest {
         $Body = . Get-ParameterValue -Parameters $MyInvocation.MyCommand.Parameters -BoundParameters $PSBoundParameters
         Write-Verbose "Set-SignRequest body: $($Body | Convertto-json)"
         if ($Body['attributes']) {
-            $Body['attributes'] = ConvertTo-NameValues -hashtable $Body['attributes']
+            $Body['attributes'] = [array](ConvertTo-NameValues -hashtable $Body['attributes'])
         }
 
         if($proofScope){

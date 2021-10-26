@@ -78,6 +78,7 @@ FunctionsToExport = @(
     'Get-SignProcess',
     'Get-SignReqTemplate',
     'Get-SignRequest',
+    'Get-SignRequestRecipient',
     'Get-SignUser',
     'New-SignDocumentMetadata',
     'New-SignRequest',
@@ -85,6 +86,7 @@ FunctionsToExport = @(
     'Stop-SignRequest'
     'Set-SignRequest',
     'Remove-SignRequest',
+    'Remove-SignRequestRecipient',
     'Reset-SignRequest'
 
 )

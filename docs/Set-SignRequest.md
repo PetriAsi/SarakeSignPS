@@ -14,8 +14,9 @@ Sets request properties
 
 ```
 Set-SignRequest [-id] <String> [[-title] <String>] [[-description] <String>] [[-autoArchive] <Boolean>]
- [[-sendMail] <Boolean>] [[-combineDocuments] <Boolean>] [[-validProofTypes] <String[]>]
- [[-proofScope] <Object>] [[-attributes] <Hashtable>] [-WhatIf] [-Confirm] [<CommonParameters>]
+ [[-archiveDescription] <String>] [[-dueDate] <DateTime>] [[-notificationDays] <Int32>] [[-sendMail] <Boolean>]
+ [[-combineDocuments] <Boolean>] [[-validProofTypes] <String[]>] [[-proofScope] <Object>]
+ [[-attributes] <Hashtable>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -32,6 +33,21 @@ PS C:\> {{ Add example code here }}
 
 ## PARAMETERS
 
+### -archiveDescription
+Message for the archivist
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 5
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -attributes
 custom attributes for signing request
 
@@ -41,7 +57,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 9
+Position: 12
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -71,7 +87,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 6
+Position: 9
 Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -92,6 +108,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -dueDate
+Request due date
+
+```yaml
+Type: DateTime
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 6
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -id
 Sign request id
 
@@ -107,6 +138,23 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -notificationDays
+Ending notification period in days.
+How may days before due date an automatic reminder is sent to the user.
+Zero means "no notification will be sent"
+
+```yaml
+Type: Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 7
+Default value: 0
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -proofScope
 Proofing scope
 
@@ -116,7 +164,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 8
+Position: 11
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -131,7 +179,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 5
+Position: 8
 Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -161,7 +209,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 7
+Position: 10
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

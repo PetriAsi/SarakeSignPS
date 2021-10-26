@@ -5,6 +5,7 @@ function Invoke-SignApi {
         [string]
         $api,
         #request body
+        [AllowEmptyCollection()]
         [System.Collections.Hashtable]
         $body = @{},
         [string]
@@ -20,30 +21,32 @@ function Invoke-SignApi {
             "Authorization" = "Bearer $(ConvertFrom-SecureString -AsPlainText -SecureString $script:siteinfo.token )"
             "Accept" = "application/json"
         }
-        if ($method -ne 'GET' -and $null -eq $body['file'] ) {
-            [string]$body = [System.Collections.Hashtable]$body | ConvertTo-Json -Depth 7
-            write-debug "Body: $body"
-            $header['Content-Type'] = 'application/json'
-        }
 
-    }
-
-    process {
         $params = @{
             "Uri"       = $apiuri
             "Method"    = $method
             "Headers"   = $header
         }
 
-        if ($null -eq $body['file']) {
+        #Send Get request without body
+        #and file request as multipart/form-data
+        if ($method -ne 'GET' -and $null -eq $body['file'] ) {
+            [string]$body = [System.Collections.Hashtable]$body | ConvertTo-Json -Depth 7
+            write-debug "Body: $body"
+            $params['ContentType'] = 'application/json ;charset=utf-8'
             $params["Body"]      = $body
         } else {
             $params["Form"]      = $body
         }
 
+
         if ($OutFile) {
             $params['OutFile'] = $OutFile
         }
+    }
+
+    process {
+
 
         Invoke-RestMethod @params
 
