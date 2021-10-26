@@ -90,7 +90,7 @@ function Add-SignRequestRecipient {
         }
 
         if ($Body['attributes']) {
-            $Body['attributes'] = ConvertTo-NameValues -hashtable $Body['attributes']
+            $Body['attributes'] = [array](ConvertTo-NameValues -hashtable $Body['attributes'])
         }
 
         $body['phaseNumber'] = $phaseNumber
