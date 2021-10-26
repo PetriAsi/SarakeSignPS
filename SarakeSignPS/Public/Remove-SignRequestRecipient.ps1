@@ -6,7 +6,7 @@ function Remove-SignRequestRecipient {
         [String]
         $id,
 
-        # Recipient id (not user user id)
+        # Recipient user id, get ids with Get-SignRequestRecipient
         [Parameter(Mandatory=$true)]
         [string]
         $recipient_id,
