@@ -86,6 +86,8 @@ FunctionsToExport = @(
     'Stop-SignRequest'
     'Set-SignRequest',
     'Remove-SignRequest',
+    'Remove-SignRequestRecipient',
+
     'Reset-SignRequest'
 
 )
