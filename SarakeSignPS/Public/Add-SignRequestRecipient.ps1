@@ -70,7 +70,12 @@ function Add-SignRequestRecipient {
         #Phone number
         [Parameter(Mandatory=$false)]
         [string]
-        $phoneNumber
+        $phoneNumber,
+
+        # custom attributes for recipient(not supported yet by api)
+        [Parameter(Mandatory=$false)]
+        [hashtable]
+        $attributes
 
     )
 
@@ -84,9 +89,13 @@ function Add-SignRequestRecipient {
             $body['readonly'] = $false
         }
 
+        if ($Body['attributes']) {
+            $Body['attributes'] = ConvertTo-NameValues -hashtable $Body['attributes']
+        }
+
         $body['phaseNumber'] = $phaseNumber
 
-        $fields = . Get-ParameterValue -Parameters $MyInvocation.MyCommand.Parameters -BoundParameters $PSBoundParameters -DefaultExcludeParameter 'id','phaseNumber','readonly','recipient','debug','verbose'
+        $fields = . Get-ParameterValue -Parameters $MyInvocation.MyCommand.Parameters -BoundParameters $PSBoundParameters -DefaultExcludeParameter 'id','phaseNumber','readonly','recipient','attributes','debug','verbose'
 
         if ($fields.Count -gt 1) {
             $body['fields'] = $fields
