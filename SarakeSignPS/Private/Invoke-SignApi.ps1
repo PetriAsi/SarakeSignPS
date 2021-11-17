@@ -30,7 +30,7 @@ function Invoke-SignApi {
 
         #Send Get request without body
         #and file request as multipart/form-data
-        if ($method -ne 'GET' -and $null -eq $body['file'] ) {
+        if ($method -ne 'GET' -or $null -eq $body['file'] ) {
             [string]$body = [System.Collections.Hashtable]$body | ConvertTo-Json -Depth 7
             write-debug "Body: $body"
             $params['ContentType'] = 'application/json ;charset=utf-8'
