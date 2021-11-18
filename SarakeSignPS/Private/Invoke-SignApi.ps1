@@ -36,7 +36,7 @@ function Invoke-SignApi {
             write-debug "Body: $body"
             $params['ContentType'] = 'application/json ;charset=utf-8'
             $params["Body"]      = $body
-        } elseif ($method -ne 'GET') {
+        } elseif ($method -eq 'GET') {
             $params["Body"]      = $body
         }else {
             $params["Form"]      = $body
