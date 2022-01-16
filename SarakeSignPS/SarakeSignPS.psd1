@@ -27,7 +27,7 @@ Author = 'Petri Asikainen'
 CompanyName = 'Sataedu'
 
 # Copyright statement for this module
-Copyright = '(c) 2021 Petri Asikainen. All rights reserved.'
+Copyright = '(c) 2021-2022 Petri Asikainen. All rights reserved.'
 
 # Description of the functionality provided by this module
 Description = 'Api wrapper for Sarake Sign'
@@ -71,20 +71,25 @@ PowerShellVersion = '7.1'
 # Functions to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no functions to export.
 FunctionsToExport = @(
     'Add-SignDocument',
+    'Add-SignGroupMember',
     'Add-SignRequestRecipient',
     'Connect-SarakeSignPS',
     'ConvertTo-NameValues',
     'Get-SignDocument',
+    'Get-SignGroup',
+    'Get-SignGroupMember',
     'Get-SignProcess',
     'Get-SignReqTemplate',
     'Get-SignRequest',
     'Get-SignRequestRecipient',
     'Get-SignUser',
     'New-SignDocumentMetadata',
+    'New-SignGroup',
     'New-SignRequest',
     'Start-SignRequest',
     'Stop-SignRequest'
     'Set-SignRequest',
+    'Set-SignRequestManager',
     'Remove-SignRequest',
     'Remove-SignRequestRecipient',
     'Reset-SignRequest'
