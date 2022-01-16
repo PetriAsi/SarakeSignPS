@@ -1,6 +1,6 @@
 <#
 .SYNOPSIS
-Cnvert hashtable to array of hashtables nad name value pairs
+Convert hashtable to array of hashtables nad name value pairs
 #>
 
 function ConvertTo-NameValues {
