@@ -3,7 +3,7 @@
 Gets sing contact groups members
 #>
 function Add-SignGroupMember {
-    [CmdletBinding(DefaultParameterSetName='Search')]
+    [CmdletBinding(DefaultParameterSetName='by ID')]
     param (
         # Group id
         [Parameter(Mandatory=$true,ParameterSetName='by ID')]
