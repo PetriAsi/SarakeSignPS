@@ -3,7 +3,7 @@
 Set request managers
 #>
 function Set-SignRequestManager {
-    [CmdletBinding(DefaultParameterSetName='Search')]
+    [CmdletBinding(SupportsShouldProcess)]
     param (
         # Request id
         [Parameter(Mandatory=$true,ParameterSetName='by ID')]
@@ -18,13 +18,15 @@ function Set-SignRequestManager {
 
     begin {
         $api = "/request/$id/managers"
-        $body = @{ 'managers' = ($managers | convertto-json -AsArray)}
+        $body = @{ 'managers' = [array]$managers }
     }
 
     process {
-        $result = Invoke-SignApi -api $api -body $body -method patch
-        if ($result.request) {
-            $result.request
+        if ($PSCmdlet.ShouldProcess("ShouldProcess?")) {
+            $result = Invoke-SignApi -api $api -body $body -method patch
+            if ($result.request) {
+                $result.request
+            }
         }
     }
 
