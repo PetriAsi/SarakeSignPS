@@ -67,7 +67,7 @@ function Get-SignDocument {
             #download and save files
             foreach ($doc in $result) {
                 Write-Verbose "Downloading file id:  $($doc.id) , title : $($doc.title) to path : $path"
-                $fullfilename = (Split-Path (Join-Path -Path $Path -ChildPath $doc.title) -LeafBase) + '.pdf'
+                $fullfilename = Join-Path -Path $Path -ChildPath  $doc.title
                 Write-Verbose "Downloading file id:  $($doc.id) , title : $($doc.title) to path : $fullfilename"
 
                 Invoke-SignApi -api "/document/$($doc.id)/download" -method GET -OutFile $fullfilename
